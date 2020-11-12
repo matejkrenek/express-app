@@ -1,0 +1,28 @@
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="projects content">
+        <h2 class="title"><%= title %></h2>
+
+        <div class="actual-content">
+        <% if(projects.length > 0) { %>
+            <% projects.forEach(project => { %>
+                <a class="item" href='/projects/<%= project._id %>'>
+                    <h3><%= project.title%></h3>
+                    <p><%= project.snippet%></p>
+                </a>
+            <% }) %>
+        <% } else{ %>
+            <div class="empty-inbox">
+                <img class="empty" src="/fishing.svg" alt="fishing">
+                <p>There are no projects to see, but you can create a new one <a href="/projects/create">here</a></p>
+            </div>
+        <% } %>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

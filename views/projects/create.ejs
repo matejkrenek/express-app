@@ -1,0 +1,27 @@
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="project-create content">
+        <h2 class="title"><%= title %></h2>
+
+        <div class="actual-content">
+            <form action="/projects" method="POST">
+                <label for="title">Project Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="snippet">Project Snippet:</label>
+                <input type="text" id="snippet" name="snippet" required>
+                <label for="file">Image File:</label>
+                <input type="file" name="file" id="input-files" class="form-control-file border"/>
+                <label for="body">Project Body:</label>
+                <textarea id="body" name="body" required></textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+</html>
